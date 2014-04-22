@@ -8,9 +8,10 @@ The board starts with all relays turned off (relayCheck[] at all zeros).
 When a message is received via MQTT, the code checks its validity.
 
 - IF the code is less than 0 or greater than 16 while not being 998 or 999, the status is dumped as an error.
-- IF the code is between 0 and 16 (inclusive):
-- - this index in relayCheck[] is flipped
-- - a status message is published with the new status
+- IF the code is between 1 and 16 (inclusive):
+-- this index in relayCheck[] is flipped
+-- a status message is published with the new status
+- IF the code is 0, all relays are turned OFF and a status message is published with the new status
 - IF the code is 998, all relays are turned ON (mostly for testing but the functionality is there) and a status message is published with the new status
 - IF the code is 999, a status message is published with the current state of relayCheck[] (eg with relays 1, 4, 6 and 12 turned on: 1001010000010000)
 
