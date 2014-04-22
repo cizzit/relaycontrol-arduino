@@ -1,0 +1,6 @@
+relaycontrol-arduino
+====================
+
+MQTT controlled relays (Arduino-side code)
+
+Requires PubSubClient.h - download from here: http://knolleary.net/arduino-client-for-mqtt/
